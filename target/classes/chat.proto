@@ -1,0 +1,18 @@
+syntax = "proto3";
+option java_package = "ma.distributedsystems.stubs";
+
+service ChatService{
+//  rpc join(Request) returns (Request) {}
+  rpc exit(Request) returns (Empty) {}
+  rpc chat(stream Request) returns (stream Request) {}
+}
+
+message Request{
+  string from = 1;
+  repeated string to = 2;
+  string content = 3;
+}
+
+message Empty{
+
+}
